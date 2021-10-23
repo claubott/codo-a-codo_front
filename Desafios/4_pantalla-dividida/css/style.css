@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.divided-hero{
+    display: flex;
+}
+
+.cta-left{
+    width: 50%;
+    height: 100vh;
+    background-color: #fdd306;
+    padding: 5% 20% 5% 5%;
+}
+
+.cta-right{
+    width: 50%;
+    height: 100vh;
+    background-image: url('https://picsum.photos/800?random=1');
+    background-position: center;
+    background-size: cover;
+}
+
+.cta-title {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.white-text {
+    color: white;
+}
+
+.cta-text {
+    margin: 40px 0;
+    line-height: 1.75em;
+}
+
+.cta-button a {
+    color: white;
+    font-weight: bold;
+    font-size: smaller;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 3px solid white;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.cta-button a:hover {
+    background-color: white;
+    color: black;
+}
+
+@media (max-width: 600px) {
+    .cta-title {
+        font-size: 28px;
+    }
+
+    .cta-text {
+        font-size: 0.9em;
+    }
+
+    .cta-button a {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 900px) {
+    .cta-left {
+        padding: 5%;
+    }
+}

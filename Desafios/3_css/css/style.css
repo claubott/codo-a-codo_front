@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.menu {
+    text-align: right;
+    padding: 10px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer {
+    text-align: center;
+}
+
+.menu,
+.footer {
+    background-color: darkgray;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.menu a {
+    padding: 10px;
+    border-left: 1px solid white ;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.menu :first-child {
+    border-left: none;
+}
+
+.bolded {
+    font-weight: bold;
+}
+
+.italized {
+    font-style: italic;
+}
