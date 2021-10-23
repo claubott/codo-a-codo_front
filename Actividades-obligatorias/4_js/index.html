@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JS</title>
+</head>
+<body>
+    <style>
+        section{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        section > div{
+            border: 1px solid lightgray;
+            width: 250px;
+            padding: 5px;
+        }
+        td, th {
+            border: 1px solid black;
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        #countdown{
+            margin: 10px 0 0;
+            text-align:center;
+            border: 1px solid orangered;
+            padding: 5px;
+        }
+    </style>
+
+    <script>
+        // ------------------------- Ejercicios JavaScript Nivel 1 -------------------------
+
+        // Ejercicio 1
+        // Mostrar por consola, tu nombre, apellido, comisión y hobbies
+        function e1_1(){
+            let nombre = "Claudia";
+            let apellido = "Bottero";
+            let comision = 1115;
+            let hobbies = "leer, escuchar música y hacer reiki";
+            console.log("Soy " + nombre + " " + apellido + ", estoy en la comisión " + comision + " y mis hobbies son: " + hobbies);
+        }
+
+        // Ejercicio 2
+        // Escribe un programa que le pida al usuario ingresar una frase y la imprima en la consola.
+        // Recuerda que para pedirle al usuario que escriba una frase debes utilizar el método prompt() y para escribir en la consola debes utilizar el método console.log().
+        function e1_2(){
+            let frase = prompt("Escribe una frase: ");
+            console.log(frase);
+        }
+
+        // Ejercicio 3
+        // Escribe un programa que le pregunte al usuario su nombre e imprima "Hola " seguido del nombre y un signo de exclamación.
+        function e1_3(){
+            let suNombre = prompt("¿Cuál es tu nombre?");
+            console.log("Hola " + suNombre + "!");
+        }
+
+        // Ejercicio 4
+        // Escribe un programa que le pida al usuario su nombre y apellido y lo imprima por consola
+        function e1_4(){
+            let suNombre = prompt("Escribe tu nombre:");
+            let suApellido = prompt("Y ahora escribe tu apellido:");
+            console.log(suNombre + " " + suApellido);
+        }
+
+        // Ejercicio 5
+        // Escribe un programa que le pida al usuario su año de nacimiento e imprima su edad actual en la consola con la frase "Tienes X años".
+        function e1_5(){
+            let annioNac = prompt("Escribe tu año de nacimiento:");
+            let edad = 2021 - annioNac;
+            console.log("Tienes " + edad + " años");
+        }
+
+        // Ejercicio 6
+        // El índice de masa corporal (IMC), o BMI por sus siglas en inglés, es un valor que determina la cantidad de grasa de una persona. El BMI se calcula con la siguiente formula: peso / altura^2
+        // Escribe un programa que le pida al usuario su peso y su altura para calcular su BMI e imprima la frase "Tu BMI es X".
+        function e1_6(){
+            let peso = prompt("Escribe tu peso (en kg):");
+            let altura = prompt("Escribe tu altura (en m):");
+            let bmi = peso / altura**2;
+            console.log("Tu BMI es " + bmi);
+        }
+
+        // Ejercicio 7
+        // Declarar una variable de nombre cantidadDeVentanas y asignarle la cantidad de ventanas que hay en tu casa. Mostrar el valor de la variable por la consola.
+        function e1_7(){
+            let cantidadDeVentanas = 18;
+            console.log(cantidadDeVentanas);
+        }
+
+        // Ejercicio 8
+        // Declarar una variable de nombre soyHumano y asignarle el valor true (verdadero). Mostrar el valor de la variable por la consola.
+        function e1_8(){
+            let soyHumano = true;
+            console.log(soyHumano);
+        }
+
+        // Ejercicio 9
+        // Declarar una variable de nombre miGustoDePizza y asignarle la variedad de pizza que más te guste usando un String (cadena de caracteres). Mostrar el valor de la variable por la consola.
+        function e1_9(){
+            let miGustoDePizza = "🍍";
+            console.log(miGustoDePizza);
+        }
+
+        // Ejercicio 10
+        // Mostrar por la consola los siguientes valores false, 'Hola', 0 y 'Minions' usando la misma variable.
+        function e1_10(){
+            let cualquierCosa = false;
+            console.log(cualquierCosa);
+            
+            cualquierCosa = "Hola";
+            console.log(cualquierCosa);
+
+            cualquierCosa = 0;
+            console.log(cualquierCosa);
+
+            cualquierCosa = "Minions";
+            console.log(cualquierCosa);
+        }
+
+        // Ejercicios 11
+        // Crear un programa que dado la base y la altura de un triangulo calcule la superficie y el perímetro.
+        function e1_11(){
+            let b = prompt("Medida de la base del triángulo:");
+            let h = prompt("Medida de la altura del triángulo:");
+            let area = b * h / 2;
+            let perimeter = b * 3; // P = a+b+c (suma de los lados, si no es equilátero)
+
+            console.log("Superficie: " + area);
+            console.log("Perímetro: "+ perimeter + " (Se asume un triángulo equilátero. No es posible calcular para otros triángulos sin conocer al menos dos lados y el ángulo entre ellos.)");
+
+            // fórmula para lado faltante de triángulo rectángulo (q se podría modificar para isósceles b/2):
+            // var hipotenusa = Math.sqrt(b**2 + h**2); 
+            // console.log(hipotenusa);
+        }
+
+        // Ejercicio 12
+        // Crear un programa que, al pasar los datos del peso de una persona en libras, haga la conversión a kilogramos
+        function e1_12(){
+            let pesoLb = prompt("Ingrese su peso en libras: ");
+            let pesoKg = pesoLb / 2.205;
+
+            console.log("Su peso en kg son " + pesoKg);
+        }
+
+        // Ejercicio 13
+        // Crear un programa que al ingresar el sueldo de un trabajador, aplique el 15% de aumento y lo muestre en la consola.
+        function e1_13(){
+            let sueldo = prompt("Ingrese el sueldo: ");
+            let sueldoNuevo = sueldo * 1.15;
+
+            console.log("El sueldo con 15% de aumento es: $" + sueldoNuevo);
+        }
+
+        // Ejercicio 14
+        // Crear un programa que al ingresar una nota de un alumno, muestre con un alert() si el alumno esta “aprobado” (se aprueba con una nota mayor a 7) y “reprobado” en caso contrario
+        function e1_14(){
+            let nota = prompt("Escriba una nota:");
+
+            if (nota<7){
+                alert("reprobado");
+            } else {
+                alert("aprobado");
+            }
+        }
+
+        // Ejercicio 15
+        // Crear un programa tal que dado como datos la categoría y el sueldo de un trabajador, calcule el aumento correspondiente teniendo en cuenta la siguiente tabla. Mostrar con un alert() la categoría y el nuevo sueldo.
+        // Categoría Aumento
+        // 1         15%
+        // 2         10%
+        // 3         8%
+        // 4         7% 
+        function e1_15(){
+            let sueldo = prompt("Ingrese el sueldo: ");
+            let categoria = prompt("Ingrese la categoría: 1, 2, 3 o 4");
+
+            switch (categoria){
+                case "1":
+                    alert("Nuevo sueldo de la categoría 1: $" + (sueldo*1.15));
+                    break;
+                case "2":
+                    alert("Nuevo sueldo de la categoría 2: $" + (sueldo*1.1));
+                    break;
+                case "3":
+                    alert("Nuevo sueldo de la categoría 3: $" + (sueldo*1.08));
+                    break;
+                case "4":
+                    alert("Nuevo sueldo de la categoría 4: $" + (sueldo*1.07));
+                    break;
+                default:
+                    alert("No es una categoría válida.");
+            }
+        }
+
+        // Ejercicio 16
+        // Crear un programa tal que dado como datos la matrícula y 5 calificaciones de un alumno; imprima la matricula, el promedio y la palabra “aprobado” si el alumno tiene un promedio mayor o igual que 7, y la palabra “no aprobado” en caso contrario
+        function e1_16(){
+            let matricula = prompt("Matrícula del alumno:");
+            let nota1 = prompt("Escriba la primera nota:");
+            let nota2 = prompt("Escriba la segunda nota:");
+            let nota3 = prompt("Escriba la tercera nota:");
+            let nota4 = prompt("Escriba la cuarta nota:");
+            let nota5 = prompt("Escriba la quinta nota:");
+            let promedio = (Number(nota1) + Number(nota2) + Number(nota3) + Number(nota4) + Number(nota5)) / 5;
+            let estado = "";
+
+            if (promedio>=7){
+                estado = "aprobado";
+            } else {
+                estado = "no aprobado";
+            }
+            console.log(matricula + ": " + promedio + "(" + estado+ ")");
+        }
+
+        // Ejercicio 17
+        // Dado 3 números enteros, determinar cual de ellos es el mayor, tenga en cuenta que los números pueden ser iguales.
+        function e1_17(){
+            let num1 = parseInt(prompt("Escriba el primer número:"));
+            let num2 = parseInt(prompt("Escriba el segundo número:"));
+            let num3 = parseInt(prompt("Escriba el tercer número:"));
+
+            if (num1==num2 && num1==num3){
+                console.log("Los números son iguales.");
+            } else if (num1>num2){
+                if (num1>num3){
+                    console.log("El mayor es: " + num1);
+                } else {
+                    console.log("El mayor es: " + num3);
+                }
+            } else {
+                console.log("El mayor es: " + num2);
+            }
+        }
+
+        // ---------------------------------------------------------------------------------
+        // ------------------------- Ejercicios JavaScript Nivel 2 -------------------------
+        // Ejercicio 1.
+        // Crear un programa que defina tres variables llamadas “variable_a”, “variable_b” y “variable_resultado”. Cargar las primeras dos con los valores numéricos 33 y 77. Sumar ambas variables y guardar el resultado en la variable “variable_resultado”. Imprimir el resultado por consola.
+        function e2_1(){
+            let variable_a, variable_b, variable_resultado;
+            variable_a = 33;
+            variable_b = 77;
+            variable_resultado = variable_a + variable_b;
+
+            console.log(variable_resultado);
+        }
+
+        // Ejercicio 2.
+        // Crear un programa que defina 5 variables llamadas “a”,“b”...“e” y una sexta variable llamada “promedio”. Cargar las 5 variables con valores y calcular el promedio de los mismos. Imprimir el resultado por consola.
+        function e2_2(){
+            let a, b, c, d, e, promedio;
+            a = 10;
+            b = 7;
+            c = 8;
+            d = 9.5;
+            e = 4;
+
+            promedio = (a+b+c+d+e)/5;
+            console.log(promedio);
+        }
+
+        // Ejercicio 3.
+        // Crear un programa que defina las variables “nota1” y “nota2”. Asignarle valores a ambas. Comparar si “nota1” es mayor a “nota2” e imprimir el resultado de la comparación.
+        function e2_3(){
+            let nota1, nota2, comparacion;
+            nota1 = 8.5;
+            nota2 = 9;
+            comparacion = nota1 > nota2;
+
+            console.log("Resultado de la comparación: " + comparacion);
+        }
+
+        // Ejercicio 4.
+        // Una farmacia hace el 15% de descuento a sus clientes si la compra es mayor a 100 pesos. Escribir un programa que, dado el monto de una compra como valor numérico, diga cuanto debe abonar el cliente aplicando el descuento si es necesario.
+        function e2_4(){
+            let monto, nuevoMonto;
+            monto = Number(prompt("Escriba el monto de la compra:"));
+
+            if (monto > 100){
+                nuevoMonto = monto * 0.85;
+                console.log("Con descuento del 15%, el cliente debe abonar con descuento: $" + nuevoMonto);
+            } else {
+                console.log("El cliente debe abonar: $" + monto);
+            }
+        }
+
+        // Ejercicio 5.
+        // Crear un programa que calcule el pago que hacen un grupo de personas para ver una película teniendo en cuenta que si el grupo es menor de 8 personas el pago es de 1.5 pesos por persona y para grupos de 8 personas o más el pago es 0.5 pesos por persona.
+        function e2_5(){
+            let grupo, pago;
+            grupo = Number(prompt("¿Cuántas personas hay en el grupo?"));
+
+            if (grupo < 8){
+                pago = grupo * 1.5;
+            } else {
+                pago = grupo * 0.5;
+            }
+            console.log("Las entradas para un grupo de " + grupo + " personas cuestan: $" + pago);
+        }
+
+        // Ejercicio 6.
+        // Crear un programa que defina las variables “nota1” y “nota2”. Asignarle valores a ambas. Comparar si “nota1” es mayor a “nota2” imprimir el mensaje “Nota1 es mayor” o “Nota2 es mayor” según el resultado de la comparación.
+        function e2_6(){
+            let nota1, nota2;
+            nota1 = 7;
+            nota2 = 4;
+
+            if (nota1 > nota2){
+                console.log("Nota1 es mayor");
+            } else {
+                console.log("Nota2 es mayor");
+            }
+        }
+
+        // Ejercicio 7.
+        // Las puntuaciones de las películas se clasifican en: 
+        // 0: mala, 1: regular, 2: buena,3: muy buena, 4: excelente
+        // Crear un programa donde se pide al usuario que ingrese un valor entre 0 a 4. Imprimir la clasificación de la película según el valor numérico.
+        function e2_7(){
+            let suPuntuacion, clasificacion;
+            
+            clasificacion = ["mala", "regular", "buena", "muy buena", "excelente"];
+            suPuntuacion = prompt("Escriba una puntuación de 0 a 4");
+
+            if (suPuntuacion < 0 || suPuntuacion > 4){
+                console.log("Ese valor cae fuera de la clasificación");
+            } else {
+                console.log("La película es " + clasificacion[suPuntuacion])
+            }
+            // también se podría haber resuelto sin el array clasificacion y con switch
+        }
+
+        // Ejercicio 8.
+        // Crear un programa que imprima una cuenta regresiva de 59 a 0.
+        function e2_8(){
+            let countdown = document.getElementById("countdown");
+            countdown.style.fontFamily = "sans-serif";
+            countdown.style.fontSize = "48pt";
+            countdown.style.color= "red";
+            
+            for (let i = 59; i >=0; i--) {
+                setTimeout(function () {
+                    // console.log(i);
+                    countdown.innerHTML = i;
+                }, (59-i) * 1000); // no trabaja de manera asíncrona, solo agrega un delay a cada iteración
+            }
+        }
+
+        // Ejercicio 9.
+        // Crear un programa que imprima los números pares de 0 a 100.
+        function e2_9(){
+            for (let i = 0; i <= 100; i = i+2) {
+                console.log(i);
+            }
+        }
+
+        // Ejercicio 10.
+        // Crear un programa para imprimir todos los números de 100 a 0 inclusive, en forma descendiente.
+        function e2_10(){
+            for (let i = 100; i >=0; i--) {
+                console.log(i);
+            }
+        }
+
+        // Ejercicio 11.
+        // Crear un programa en donde el usuario ingresa números y se guardan en un array. Al ingresar “-1” se imprimirán los números ingresado junto con sus posiciones dentro del array.
+        function e2_11(){
+            let numeros = [];
+            let num = 0;
+
+            while (num != -1) {
+                num = Number(prompt("Escriba un número (o ingrese -1 para terminar)"));
+                if (num != -1){
+                    numeros.push(num);
+                }
+            }
+
+            for (let i = 0; i < numeros.length; i++) {
+                console.log(i + ": " + numeros[i]);  
+            }
+        }
+
+        // Ejercicio 12.
+        // Crear un programa en donde el usuario ingresa números hasta que ingresa “-1”, en dicho caso el programa termina e imprime el promedio de los números ingresados.
+        function e2_12(){
+            let numeros = [];
+            let num;
+            let suma = 0;
+            let promedio;
+
+            do {
+                num = Number(prompt("Escriba un número (Ingrese -1 para terminar)"));
+                if (num != -1){
+                    numeros.push(num);
+                }
+            } while (num != -1);
+            
+            numeros.forEach(numero => {
+                suma += numero;
+            });
+
+            promedio = suma / numeros.length;
+
+            console.log(promedio);
+        }
+
+        // Ejercicio 13.
+        // Crear un programa en donde el usuario ingrese el nombre y el precio de 5 productos, al finalizar, se listarán en pantalla el nombre y el precio de los productos.
+        function e2_13(){
+            let productos = {};
+
+            for (let i = 0; i < 5; i++) {
+                const key = prompt("Ingrese el nombre del producto " + (i+1));
+                const value = Number(prompt("Ingrese el precio del producto " + (i+1)));
+                productos[key] = value;
+            }
+
+            for(const key in productos) {
+                console.log(key + ": $" + productos[key]);
+            }
+        }
+
+        // Ejercicio 14.
+        // Se ingresan un conjunto de n alturas de personas por teclado. Mostrar la altura promedio de las personas.
+        function e2_14(){
+            let cdadAlturas = 5;   // cantidad de alturas a promediar
+            let suma = 0;
+            let promedio;
+
+            for (let i = 0; i < cdadAlturas; i++) {
+                let altura = Number(prompt("Ingrese la altura (en metros) de la persona " + (i+1)));
+                suma += altura;
+            }
+
+            promedio = suma / n;
+            console.log("Promedio: " + promedio + " m");
+        }
+
+        // Ejercicio 15.
+        // Crear un Programa que pida al usuario un número entre 0 y 25, deberá mostrar por pantalla su significado en el bingo. Ej: 14 = "Borracho"
+        function e2_15(){
+            let significados = ["Huevos", "Agua", "Niño", "San Cono", "La cama", "Gato", "Perro", "Revólver", "Incendio", "Arroyo", "La leche", "Palito", "Soldado", "La yeta", "Borracho", "Niña bonita", "Anillo", "Desgracia", "Sangre", "Pescado", "La fiesta", "La mujer", "El loco", "Mariposa", "Caballo", "Gallina"];
+
+            let numero = Number(prompt("Escriba un número entre 0 y 25"));
+
+            console.log(numero + " = " + significados[numero]);
+        }
+
+        // Ejercicio 16.
+        // Crear 2 Vectores, uno corresponderá a los nombres y otro a los apellidos de 10 compañeros del curso de Fullstack de codo a codo
+        function e2_16(){
+            let nombres = ["Daniel", "Alexia", "Eduardo", "Ludmila", "Hernán", "Daiana", "Marcelo", "Yerfan", "Sebastián", "Florencia"];
+            let apellidos = ["Mauthone", "Rivera", "Lubo", "Miranda", "Iacoucci", "Ryan", "Donadini", "Vera", "Ares", "Biró"];
+
+            for (let i = 0; i < nombres.length; i++) {
+                console.log(nombres[i] + " " + apellidos[i]);
+            }
+            
+        }
+
+    </script>
+
+    <h1>Ejercitación JavaScript</h1>
+    <p><i>Para ver las soluciones a los ejercicios, abrir la consola (Ctrl + Shift + J en Chrome, Ctrl + Shift + K en Firefox).</i></p>
+    <br>
+
+    <h2>Nivel 1</h2>
+
+    <section>
+        <div>
+            <h3>Ejercicio 1</h3>
+            <p>Mostrar por consola, tu nombre, apellido, comisión y hobbies</p>
+            <button onclick="e1_1()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 2</h3>
+            <p>Escribe un programa que le pida al usuario ingresar una frase y la imprima en la consola.</p>
+            <p><i>Recuerda que para pedirle al usuario que escriba una frase debes utilizar el método <code>prompt()</code> y para escribir en la consola debes utilizar el método <code>console.log()</code>.</i></p>
+            <button onclick="e1_2()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 3</h3>
+            <p>Escribe un programa que le pregunte al usuario su nombre e imprima "Hola " seguido del nombre y un signo de exclamación.</p>
+            <button onclick="e1_3()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 4</h3>
+            <p>Escribe un programa que le pida al usuario su nombre y apellido y lo imprima por consola</p>
+            <button onclick="e1_4()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 5</h3>
+            <p>Escribe un programa que le pida al usuario su año de nacimiento e imprima su edad actual en la consola con la frase "Tienes X años".</p>
+            <button onclick="e1_5()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 6</h3>
+            <p>l índice de masa corporal (IMC), o BMI por sus siglas en inglés, es un valor que determina la cantidad de grasa de una persona.</p>
+            <p>El BMI se calcula con la siguiente fórmula: <i>peso / altura^2</i></p>
+            <p>Escribe un programa que le pida al usuario su peso y su altura para calcular su BMI e imprima la frase "Tu BMI es X".</p>
+            <button onclick="e1_6()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 7</h3>
+            <p>Declarar una variable de nombre <code>cantidadDeVentanas</code> y asignarle la cantidad de ventanas que hay en tu casa. Mostrar el valor de la variable por la consola.</p>
+            <button onclick="e1_7()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 8</h3>
+            <p>Declarar una variable de nombre <code>soyHumano</code> y asignarle el valor <code>true</code> (verdadero). Mostrar el valor de la variable por la consola.</p>
+            <button onclick="e1_8()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 9</h3>
+            <p>Declarar una variable de nombre <code>miGustoDePizza</code> y asignarle la variedad de pizza que más te guste usando un String (cadena de caracteres). Mostrar el valor de la variable por la consola.</p>
+            <button onclick="e1_9()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 10</h3>
+            <p>Mostrar por la consola los siguientes valores <code>false</code>, <code>'Hola'</code>, <code>0</code> y <code>'Minions'</code> usando la misma variable.</p>
+            <button onclick="e1_10()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 11</h3>
+            <p>Crear un programa que dado la base y la altura de un triángulo calcule la superficie y el perímetro.</p>
+            <button onclick="e1_11()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 12</h3>
+            <p>Crear un programa que, al pasar los datos del peso de una persona en libras, haga la conversión a kilogramos</p>
+            <button onclick="e1_12()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 13</h3>
+            <p>Crear un programa que al ingresar el sueldo de un trabajador, aplique el 15% de aumento y lo muestre en la consola.</p>
+            <button onclick="e1_13()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 14</h3>
+            <p>Crear un programa que al ingresar una nota de un alumno, muestre con un <code>alert()</code> si el alumno esta “aprobado” (se aprueba con una nota mayor a 7) y “reprobado” en caso contrario.</p>
+            <button onclick="e1_14()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 15</h3>
+            <p>Crear un programa tal que dado como datos la categoría y el sueldo de un trabajador, calcule el aumento correspondiente teniendo en cuenta la siguiente tabla. Mostrar con un <code>alert()</code> la categoría y el nuevo sueldo</p>
+            <table>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Aumento</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>8%</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>7%</td>
+                </tr>
+            </table>
+            <button onclick="e1_15()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 16</h3>
+            <p>Crear un programa tal que dado como datos la matrícula y 5 calificaciones de un alumno; imprima la matrícula, el promedio y la palabra “aprobado” si el alumno tiene un promedio mayor o igual que 7, y la palabra “no aprobado” en caso contrario</p>
+            <button onclick="e1_16()">Ejecutar solución</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 17</h3>
+            <p>Dado 3 números enteros, determinar cual de ellos es el mayor, tenga en cuenta que los números pueden ser iguales.</p>
+            <button onclick="e1_17()">Ejecutar solución</button>
+        </div>
+    </section>
+
+    <br>
+
+    <h2>Nivel 2</h2>
+    
+    <section>
+
+        <div>
+            <h3>Ejercicio 1</h3>
+            <p>Crear un programa que defina tres variables llamadas “variable_a”, “variable_b” y “variable_resultado”. Cargar las primeras dos con los valores numéricos 33 y 77. Sumar ambas variables y guardar el resultado en la variable “variable_resultado”. Imprimir el resultado por consola.</p>
+            <button onclick="e2_1()">Ejecutar solución</button>
+        </div>
+    
+        <div>
+            <h3>Ejercicio 2</h3>
+            <p>Crear un programa que defina 5 variables llamadas “a”,“b”...“e” y una sexta variable llamada “promedio”. Cargar las 5 variables con valores y calcular el promedio de los mismos. Imprimir el resultado por consola.</p>
+            <button onclick="e2_2()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 3</h3>
+            <p>Crear un programa que defina las variables “nota1” y “nota2”. Asignarle valores a ambas. Comparar si “nota1” es mayor a “nota2” e imprimir el resultado de la comparación.</p>
+            <button onclick="e2_3()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 4</h3>
+            <p>Una farmacia hace el 15% de descuento a sus clientes si la compra es mayor a 100 pesos. Escribir un programa que, dado el monto de una compra como valor numérico, diga cuanto debe abonar el cliente aplicando el descuento si es necesario.</p>
+            <button onclick="e2_4()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 5</h3>
+            <p>Crear un programa que calcule el pago que hacen un grupo de personas para ver una película teniendo en cuenta que si el grupo es menor de 8 personas el pago es de 1.5 pesos por persona y para grupos de 8 personas o más el pago es 0.5 pesos por persona.</p>
+            <button onclick="e2_5()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 6</h3>
+            <p>Crear un programa que defina las variables “nota1” y “nota2”. Asignarle valores a ambas. Comparar si “nota1” es mayor a “nota2” imprimir el mensaje “Nota1 es mayor” o “Nota2 es mayor” según el resultado de la comparación.</p>
+            <button onclick="e2_6()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 7</h3>
+            <p>Las puntuaciones de las películas se clasifican en: </p>
+            <p>0: mala, 1: regular, 2: buena,3: muy buena, 4: excelente</p>
+            <p>Crear un programa donde se pide al usuario que ingrese un valor entre 0 a 4. Imprimir la clasificación de la película según el valor numérico.</p>
+            <button onclick="e2_7()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 8</h3>
+            <p>Crear un programa que imprima una cuenta regresiva de 59 a 0.</p>
+            <button onclick="e2_8()">Ejecutar solución</button>
+            <div id="countdown"></div>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 9</h3>
+            <p>Crear un programa que imprima los números pares de 0 a 100.</p>
+            <button onclick="e2_9()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 10</h3>
+            <p>Crear un programa para imprimir todos los números de 100 a 0 inclusive, en forma descendiente.</p>
+            <button onclick="e2_10()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 11</h3>
+            <p>Crear un programa en donde el usuario ingresa números y se guardan en un array. Al ingresar “-1” se imprimirán los números ingresado junto con sus posiciones dentro del array.</p>
+            <button onclick="e2_11()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 12</h3>
+            <p>Crear un programa en donde el usuario ingresa números hasta que ingresa “-1”, en dicho caso el programa termina e imprime el promedio de los números ingresados.</p>
+            <button onclick="e2_12()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 13</h3>
+            <p>Crear un programa en donde el usuario ingrese el nombre y el precio de 5 productos, al finalizar, se listarán en pantalla el nombre y el precio de los productos.</p>
+            <button onclick="e2_13()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 14</h3>
+            <p>Se ingresan un conjunto de n alturas de personas por teclado. Mostrar la altura promedio de las personas.</p>
+            <button onclick="e2_14()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 15</h3>
+            <p>Crear un Programa que pida al usuario un número entre 0 y 25, deberá mostrar por pantalla su significado en el bingo. Ej: 14 = "Borracho"</p>
+            <button onclick="e2_15()">Ejecutar solución</button>
+        </div>
+        
+        <div>
+            <h3>Ejercicio 16</h3>
+            <p>Crear 2 Vectores, uno corresponderá a los nombres y otro a los apellidos de 10 compañeros del curso de Fullstack de codo a codo</p>
+            <button onclick="e2_16()">Ejecutar solución</button>
+        </div>
+
+    </section>
+
+</body>
+</html>
