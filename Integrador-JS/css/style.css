@@ -1,0 +1,91 @@
+/* --------------- estilos generales --------------- */
+html {
+    /* offset para menú sticky */
+    scroll-padding-top: 101px;
+}
+
+.section-title {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+}
+
+.section-title span {
+    font-size: 1rem;
+}
+
+.boldish {
+    font-weight: 600;
+}
+
+.definition {
+    text-decoration: underline dotted black;
+    cursor: help;
+}
+
+.gray-background {
+    background-color: #353a40;
+}
+
+.lightgreen-background {
+    background-color: #96c93e;
+}
+
+.blue-gradient-bg {
+    background-image: linear-gradient(to right, #1d3744 , #1e5372);
+}
+
+/* --------------- Menú top/principal --------------- */
+.green-text {
+    color: #2e8b44 !important;
+}
+
+.green-text:hover {
+    color: #29a744 !important;
+}
+
+.green-text.active {
+    color: #29a744 !important;
+    border: 1px solid #2e8b44 !important;
+}
+
+/* --------------- Info conferencia --------------- */
+.dark-overlay:after {
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#000;
+    opacity:0.6;
+}
+
+.cover-view {
+    width: 100vw;
+    height: 85vh;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    right: 10% !important;
+    left: 10% !important;
+}
+
+.green-background {
+    background-color: #29a744 !important;
+}
+
+.green-background:hover {
+    background-color: #2e8b44 !important;
+}
+
+/* --------------- Menú footer --------------- */
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #69bcec;
+}
