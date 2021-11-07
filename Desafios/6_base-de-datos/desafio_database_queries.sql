@@ -83,3 +83,4 @@ DELETE FROM empleados WHERE depto_id=14;
 -- 2.16 Despedir a los empleados que trabajen en departamentos con un presupuesto superior a 90000
 --
 DELETE empleados.* FROM empleados INNER JOIN departamentos ON empleados.depto_id=departamentos.id WHERE departamentos.presupuesto > 90000;
+DELETE FROM empleados WHERE depto_id IN (SELECT d.id FROM departamentos d WHERE d.presupuesto > 90000);
