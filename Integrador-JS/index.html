@@ -141,14 +141,14 @@
 
         <div class="row mb-3">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="First name" required>
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
+            <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name" required>
           </div>
         </div>
         <div class="mb-3">
-          <textarea class="form-control" id="your-topic" rows="3" placeholder="¿Sobre qué querés hablar?" ></textarea>
+          <textarea class="form-control" id="your-topic" rows="3" placeholder="¿Sobre qué querés hablar?" required></textarea>
           <div id="topic-help" class="form-text">Recordá incluir un título para tu charla</div>
         </div>
         <div class="d-grid">
@@ -210,26 +210,26 @@
       <form class="col-lg-7 col-md-12 m-auto px-4">
         <div class="row mb-3">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="First name" required>
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
+            <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name" required>
           </div>
         </div>
 
         <div class="mb-3">
-          <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+          <input type="email" class="form-control" placeholder="Email" aria-label="Email" required>
         </div>
 
         <div class="row mb-3">
           <div class="col">
             <label for="quantity" class="mb-2" required>Cantidad</label>
-            <input type="number" min="1" value="1" class="form-control" placeholder="Cantidad" aria-label="Quantity" id="quantity">
+            <input type="number" min="1" value="0" class="form-control" placeholder="Cantidad" aria-label="Quantity" id="quantity" required>
           </div>
           <div class="col">
             <label for="category" class="mb-2">Categoría</label>
-            <select class="form-select" aria-label="Category" id="category">
-              <option value="0" disabled selected hidden>Elegí tu categoría...</option>
+            <select class="form-select" aria-label="Category" id="category" required>
+              <option value="" disabled selected hidden>Elegí tu categoría...</option>
               <option value="1">Estudiante</option>
               <option value="2">Trainee</option>
               <option value="3">Junior</option>
@@ -242,12 +242,19 @@
           Total a pagar: $ <span id="total"></span>
         </div>
 
+        <div id="price-alert" class="alert alert-danger" role="alert" style="display: none;">
+          Se necesita una cantidad y una categoría para calcular el total a pagar.
+        </div>
+
         <div class="row mb-3">
           <div class="col d-grid">
-            <button type="reset" class="btn text-white lightgreen-background" id="clear">Borrar</button>
+            <button type="button" class="btn text-white lightgreen-background" id="summary">Resumen</button>
           </div>
           <div class="col d-grid">
-            <button type="button" class="btn text-white lightgreen-background" id="summary">Resumen</button>
+            <button type="reset" class="btn btn-outline-secondary" id="clear">Borrar</button>
+          </div>
+          <div class="col d-grid">
+            <button type="submit" class="btn text-white lightgreen-background">Comprar</button>
           </div>
         </div>
 

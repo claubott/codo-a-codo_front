@@ -31,8 +31,25 @@ html {
     background-color: #96c93e;
 }
 
+.lightgreen-background:hover {
+    background-color: #29a744;
+}
+
 .blue-gradient-bg {
     background-image: linear-gradient(to right, #1d3744 , #1e5372);
+}
+
+/* --------------- Formularios --------------- */
+select:valid,
+textarea:valid,
+input:valid {
+  border: 1px solid #96c93e;
+}
+
+select:focus:invalid,
+textarea:focus:invalid,
+input:focus:invalid {
+  box-shadow: 0 0 5px 1px red;
 }
 
 /* --------------- Menú top/principal --------------- */

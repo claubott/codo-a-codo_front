@@ -8,6 +8,7 @@ var scrollSpy = new bootstrap.ScrollSpy(document.body, {
 const clearBtn = document.getElementById('clear');
 const summaryBtn = document.getElementById('summary');
 const totalSpan = document.getElementById('total');
+const priceAlert = document.getElementById('price-alert');
 var price = 200;
 var discount = 1;
 
@@ -32,11 +33,19 @@ function updateTotal() {
     case "3":
       discount = 0.85;
       break;
-    default:
+    case "4":
       discount = 1;
+      break;
+    default:
+      discount = 0;
       break;
   }
 
   finalPrice = price * quantity.value * discount;
-  totalSpan.textContent = finalPrice;
+  if (finalPrice > 0) {
+    totalSpan.textContent = finalPrice;
+    priceAlert.style.display = "none";
+  } else {
+    priceAlert.style.display = "block";
+  }
 }
